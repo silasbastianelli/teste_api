@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Json</title>
+</head>
+<body>
+
+    <h2>Consumindo minha Json</h2>
+
+    <input type="text" id="dado" placeholder="Nome do personagem">
+    <div id="dados"></div>
+  
+
+
+
+    <script>
+        //Array
+        const json = 
+        `{
+            "nome": "Bob Esponja", 
+            "profissao": "Cozinheiro", 
+            "idade": 37, 
+            "foto": "<img src='https://yt3.googleusercontent.com/G-3lOUtuS24IfS7lXe7Krrj5JwcSt7NckaTwTuZS32gkhvL1f6zBQM3RrAagZuAiPKoK5iktj4w=s900-c-k-c0x00ffffff-no-rj' width='100px'>"
+        }`;
+        //Verificar console
+        console.log(json);
+
+        //Transformando em JSON - Objeto Javacript
+        const data = JSON.parse(json); 
+        //Verificar console
+        console.log(data);
+
+        //Inserir no input- Front-End
+        document.getElementById("dado").value="Nome: "+data.nome
+
+        //Inserir na div- Front-End
+        document.getElementById("dados").innerHTML= 
+        "<p>Profissão: " +data.profissao+ "</p>"+
+        "<p>Idade: " +data.idade+ "</p>"+
+        "<p>Foto: <br>" +data.foto+ "</p>"  
+    </script>
+    
+</body>
+</html>
